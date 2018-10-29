@@ -6,12 +6,10 @@
     <link type="text/css" src="style.css" />
   </head>
   <body id="gradient">
-    <div>
-<button type="button" name="alert" ng-click="alert = Alert : Vous avez cliquer sur le boutton">Ne cliquez pas</button>
-    </div>
-    <div>
-      <span>{{alert}}</span>
+    <div ng-controller="ouiTest">
+<button type="button" name="alert" ng-click="doAlert(oui)">Ne cliquez pas</button>
     </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+<script type="text/javascript" src="js.js"></script>
   </body>
 </html>
