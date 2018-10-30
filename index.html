@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr" ng-app>
+<!-- On donne un nom au ng-app -->
+<html lang="fr" ng-app="alertTest">
   <head>
     <meta charset="utf-8" />
     <title>exo2bonus</title>
     <link type="text/css" src="style.css" />
   </head>
   <body id="gradient">
-    <div ng-controller="ouiTest">
-<button type="button" name="alert" ng-click="doAlert(oui)">Ne cliquez pas</button>
+    <!-- On appel le controleur -->
+    <div ng-controller="alertController">
+      <!-- On active la fonction doAlert(alert) au click du boutton -->
+<button type="button" name="alert" ng-click="doAlert()">Ne cliquez pas</button>
     </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-<script type="text/javascript" src="js.js"></script>
+<script type="text/javascript">
+// On nomme le modul par le nom donné au ng-app
+  angular.module("alertTest", [])
+  // On met en place un controleur qui vient récupérer l'information du clique
+    .controller("alertController", ["$scope", "$window", function($scope, $window) {
+      // Lance la fonction d'alerte qui affiche une fenêtre avec du texte
+      $scope.doAlert = function() {
+        $window.alert("J'avais dis : Ne cliquez pas");
+      };
+    }]);
+</script>
   </body>
 </html>
